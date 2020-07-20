@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Nepali News</string>
 
-    <string name="app_id">ca-app-pub-7330887983553029~4271620333</string>
-    <string name="banner_ad">ca-app-pub-7330887983553029/7016724249</string>
-    <string name="intrestial_ad">ca-app-pub-7330887983553029/6244953658</string>
-    <string name="native_ad">ca-app-pub-7330887983553029/7857418220</string>
-    <string name="rewarded_ad">ca-app-pub-7330887983553029/7174891942</string>
+    <string name="app_id"></string>
+    <string name="banner_ad"></string>
+    <string name="intrestial_ad"></string>
+    <string name="native_ad"></string>
+    <string name="rewarded_ad"></string>
 
     <string name="stream_offline">Radio station is offline. Please try again later.</string>
     <string name="no_to_dos">Add new todo or note\n&amp;\nSwipe Right to delete the item</string>
