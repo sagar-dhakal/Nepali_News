@@ -58,7 +58,7 @@ public class About_Developer extends AppCompatActivity {
         LinearLayout fork_gith = findViewById(R.id.fork_gith);
         LinearLayout licenses = findViewById(R.id.licenses);
 
-        fork_gith.setOnClickListener(v -> sendLink(""));
+        fork_gith.setOnClickListener(v -> sendLink("https://github.com/NP-Sagar-Dhakal/Nepali_News"));
         licenses.setOnClickListener(v -> {
             WebView web = (WebView) LayoutInflater.from(About_Developer.this).inflate(R.layout.dialog_licenses, null);
             web.loadUrl("file:///android_asset/licenses.html");
@@ -70,7 +70,7 @@ public class About_Developer extends AppCompatActivity {
         });
 
 
-        dev_face.setOnClickListener(v -> sendLink("https://www.facebook.com/cherrydigitalservices"));
+        dev_face.setOnClickListener(v -> sendLink("https://www.facebook.com/servicesbycherry"));
         dev_mail.setOnClickListener(v -> {
             Intent email = new Intent(Intent.ACTION_SEND);
             email.putExtra(Intent.EXTRA_EMAIL, new String[]{"cherrydigital.care@gmail.com"});
