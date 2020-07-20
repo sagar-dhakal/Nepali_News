@@ -1,0 +1,432 @@
+<resources>
+    <string name="app_name">Nepali News</string>
+
+    <string name="app_id">ca-app-pub-7330887983553029~4271620333</string>
+    <string name="banner_ad">ca-app-pub-7330887983553029/7016724249</string>
+    <string name="intrestial_ad">ca-app-pub-7330887983553029/6244953658</string>
+    <string name="native_ad">ca-app-pub-7330887983553029/7857418220</string>
+    <string name="rewarded_ad">ca-app-pub-7330887983553029/7174891942</string>
+
+    <string name="stream_offline">Radio station is offline. Please try again later.</string>
+    <string name="no_to_dos">Add new todo or note\n&amp;\nSwipe Right to delete the item</string>
+    <string name="title">What\'s on your mind?</string>
+    <string name="date_reminder_default">Today</string>
+    <string name="date_error_check_again">The date you entered is in the past.</string>
+    <string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string>
+    <string name="remind_me">Remind Me</string>
+    <string name="remove">Remove</string>
+
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+
+    <plurals name="number_of_new_entries_for_noti">
+        <item quantity="one">One New News is available to read</item>
+        <item quantity="other">%d New News are available to read</item>
+    </plurals>
+
+    <plurals name="number_of_new_entries_for_notification">
+        <item quantity="one">One New Feed is available to read</item>
+        <item quantity="other">%d New Feed are available to read</item>
+    </plurals>
+
+
+    <!--    Screen Filter-->
+    <string name="screen_filter">Screen Filter</string>
+
+    <string name="permission_control_blackbulb_label">Control Night Screen</string>
+    <string name="permission_control_blackbulb_desc">get the status of Night Screen and control it</string>
+
+    <!-- Button tip -->
+    <string name="button_tip_text">Tip: Click the top left button to turn on Night Screen.</string>
+
+    <!-- Yellow filter row -->
+    <string name="yellow_filter">Yellow filter</string>
+    <string name="yellow_filter_explanation">Slide to the right to make the overlay yellow instead of grey</string>
+
+    <!-- Scheduler Row -->
+    <string name="scheduler_status_on_show_enable_time">Automatically enable at %s.</string>
+    <string name="scheduler_status_on_show_disable_time">It will be end at %s.</string>
+    <string name="scheduler_status_off">OFF</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Dark theme Row -->
+    <string name="action_dark_theme">Dark theme</string>
+    <string name="dark_theme_summary">Switch on to make Night Screen dark</string>
+
+    <!-- Advanced Row -->
+    <string name="dialog_choose_mode">Choose mode</string>
+
+    <string name="mode_text_no_permission">No permission mode</string>
+    <string name="mode_text_normal">Normal mode</string>
+    <string name="mode_text_overlay_all">System overlay mode</string>
+
+    <string name="mode_desc_no_permission">No permission is needed. However, the lockscreen, status bar and navigation bar are not dimmed. Note that this doesn\'t work in Android 7.0.</string>
+    <string name="mode_desc_normal">Recommended mode. It is stable, although it cannot dim the navigation bar and it prevents users from clicking \"Install\" or \"Allow\" in permission dialogs.</string>
+    <string name="mode_desc_overlay_all">Both the status bar and the navigation bar are dimmed. However, the screen may flash in some apps.</string>
+
+    <string name="mode_android_oreo_explanation_dialog_title">Why can\'t I change the mode?</string>
+    <string name="mode_android_oreo_explanation_dialog_message">Since Android Oreo (8.0), Android strictly limits the permissions of floating windows. The methods used before are no longer available. Maybe we will support better methods to control brightness in the future.</string>
+    <string name="mode_android_oreo_explanation_read_more">Read more</string>
+    <string name="mode_android_oreo_explanation_url" translatable="false">https://developer.android.com/about/versions/oreo/android-8.0-changes.html#all-aw</string>
+
+    <!-- More settings row -->
+    <string name="more_settings">More settings</string>
+
+    <!-- Notification Channel -->
+    <string name="notification_channel_running_status">Running status</string>
+
+    <!-- Shortcut -->
+    <string name="shortcut_label_switch">Toggle</string>
+
+    <!-- About -->
+    <string name="action_about">About</string>
+
+    <string name="about_author">Author: Paper Airplane Dev - Fung Gwo</string>
+    <string name="about_text">"Night Screen can help protect you from the harm of strong light at night.\nSome devices\' lowest brightness is still high so we can make it lower by creating a mask on screen.\n\nIf you want to support this application, you could send some money to my Alipay: fythonx\@gmail.com"</string>
+    <string name="about_other">My blog: <a href="http://feng.moe">http://feng.moe</a>\nMy sina weibo: <a href="http://weibo.com/fython">@某烧饼</a>\nPaypal: <a href="https://www.paypal.me/fython">https://www.paypal.me/fython</a>\nLogo Designer: Google+ Youlun Zhai</string>
+
+    <string name="about_donate_alipay">Support author via Alipay</string>
+
+    <string name="dialog_overlay_enable_title">Enable Status Bar Overlay</string>
+    <string name="dialog_overlay_enable_message">Enabling this can overlay the status bar at the top of the screen, but it may need a permission on some devices (such as MIUI and Android 6.0). \nIf it doesn\'t work on the first try, please allow Night Screen to show system alert windows.</string>
+
+    <string name="mask_fail_to_start">Failed to start mask. Please check whether the system has denied the permissions.</string>
+
+    <string name="dialog_first_run_title">First run</string>
+    <string name="dialog_first_run_message">Can you see this message? If you can, Night Screen is working well.\nIt will automatically stop after 5 seconds if you don\'t press OK.</string>
+
+    <!-- Notification -->
+    <string name="notification_running_title">Night Screen is enabled</string>
+    <string name="notification_running_msg">Click here to open settings</string>
+
+    <string name="notification_paused_title">Night Screen is paused</string>
+    <string name="notification_paused_msg">Click here to open settings or swipe to stop Night Screen</string>
+
+    <string name="notification_action_turn_off">Pause</string>
+    <string name="notification_action_turn_on">Resume</string>
+
+    <!-- Auto Mode -->
+    <string name="scheduler_title">Auto mode</string>
+
+    <string name="dialog_ignore_battery_opt_title">Note</string>
+    <string name="dialog_ignore_battery_opt_msg">Due to restrictions on apps introduced in Android 6.0, we may not be able to automatically (de-)activate Night Screen on time. \n\nA possible solution is to tell Android to ignore battery optimizations for Night Screen. To do so, tap \"Go to settings\" and confirm the dialog that follows.</string>
+    <string name="dialog_button_go_to_set">Go to settings</string>
+
+    <!--    Readify-->
+    <string name="never">never</string>
+    <string name="update">Update</string>
+    <string name="colon">:\u00A0</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_all_read">Mark all as read</string>
+    <string name="error">Error</string>
+    <string name="network_error">The network is not set up</string>
+    <string name="loading">Loading…</string>
+    <string name="no_result">No result</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <plurals name="number_of_new_news">
+        <item quantity="one">One New News</item>
+        <item quantity="other">%d New News</item>
+    </plurals>
+
+    <plurals name="number_of_new_entries">
+        <item quantity="one">One New Entry</item>
+        <item quantity="other">%d New Entries</item>
+    </plurals>
+
+    <!-- FEEDS -->
+    <string name="feeds">Feeds</string>
+    <string name="menu_add_feed">Add feed</string>
+    <string name="no_feeds">No feeds</string>
+    <string name="no_filters">No rules</string>
+    <string name="edit_feed_title">Edit feeds</string>
+    <string name="new_feed_title">New feed</string>
+    <string name="menu_add_group">Add group</string>
+    <string name="menu_import">Import from OPML</string>
+    <string name="menu_export">Export to OPML</string>
+    <string name="storage_request_explanation">To be able to import or export the feeds from or to a file, you must allow the application to access to the storage memory.</string>
+    <string name="error_feed_error">The feed website is unreachable.</string>
+    <string name="error_feed_process">The feed can not be processed.</string>
+    <string name="error_feed_url_exists">The address already exists.</string>
+    <string name="error_feed_import">The selected file could not be imported.</string>
+    <string name="error_feed_export">The export has failed. Make sure you have a writable SD-card mounted.</string>
+    <string name="error_external_storage_not_available">The external storage (e.g. SD-card) is not available.</string>
+    <string name="feed_no_summary">\u003c No summary available. \u003e</string>
+    <string name="feed_url">URL or Site name</string>
+    <string name="optional">(optional)</string>
+    <string name="feed_cookie">Authentication Cookie</string>
+    <string name="cookiename">Name</string>
+    <string name="cookievalue">Value</string>
+    <string name="feed_httpAuth">HTTP Authentication</string>
+    <string name="loginhttpAuth">Login</string>
+    <string name="passwordhttpAuth">Password</string>
+    <string name="tab_feed_title">Feed</string>
+    <string name="tab_filters_title">Filter</string>
+    <string name="tab_advanced_title">Advanced</string>
+    <string name="feed_title">Title</string>
+    <string name="feed_filters">Filter rules</string>
+    <string name="filter_add_title">Add rule</string>
+    <string name="filter_delete_title">Delete rule</string>
+    <string name="filter_help">Filter Help</string>
+    <string name="filter_edit_title">Edit rule</string>
+    <string name="filter_apply_to_title">Apply to title</string>
+    <string name="filter_apply_to_content">Apply to content</string>
+    <string name="accept">ACCEPT</string>
+    <string name="reject">REJECT</string>
+    <string name="feed_search">Feed search</string>
+    <string name="select_file">Select file (SD-root)</string>
+    <string name="question_delete_feed">Do you really want to delete this feed?</string>
+    <string name="question_delete_filter">Do you really want to delete this filter?</string>
+    <string name="add_group_title">Select group name</string>
+    <string name="to_group_title">Feed move action</string>
+    <string name="to_group_message">You can either put this feed into or above this group. What do you want to do?</string>
+    <string name="to_group_above">Above the group</string>
+    <string name="to_group_into">Into the group</string>
+    <string name="add_custom_feed">Custom feed</string>
+    <string name="google_news_title">Google News topics</string>
+    <string name="google_news_indicator">Select one or several topics to add. Some of them may not be provided by Google for your language.</string>
+    <string name="google_news_top_stories">Top Stories</string>
+    <string name="google_news_world">World</string>
+    <string name="google_news_business">Business</string>
+    <string name="google_news_technology">Technology</string>
+    <string name="google_news_entertainment">Entertainment</string>
+    <string name="google_news_sports">Sports</string>
+    <string name="google_news_science">Science</string>
+    <string name="google_news_health">Health</string>
+    <string name="google_news_custom_topic">Enter custom topic</string>
+
+    <!-- ENTRIES -->
+    <string name="all">Entries</string>
+    <string name="no_entries">List is empty,
+        Please click refresh button</string>
+    <string name="favorites">Starred</string>
+    <string name="context_menu_show_read">Show read entries</string>
+    <string name="menu_star">Star</string>
+    <string name="menu_unstar">Unstar</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_full_screen">Full screen</string>
+    <string name="menu_copy_clipboard">Copy link</string>
+    <string name="menu_mark_as_unread">Mark as unread</string>
+    <string name="menu_open_in_browser">Open in browser</string>
+    <string name="copied_clipboard">Link copied</string>
+    <string name="get_full_text">Retrieve the full text</string>
+    <string name="see_enclosure">See enclosure</string>
+    <string name="cant_open_link">No application found for this link</string>
+    <string name="open_enclosure">Open enclosure</string>
+    <string name="file">File</string>
+    <string name="download_and_save">Download and save</string>
+    <string name="open_link">Open link</string>
+    <string name="tip_sentence">Tip: slide left to mark as read and slide right to mark as favorite</string>
+
+    <!-- WIDGET -->
+
+    <!-- SETTINGS -->
+    <string name="settings_category_refresh">Automated refresh</string>
+    <string name="settings_refresh_enabled">Enable automatic refresh</string>
+    <string name="settings_refresh_enabled_description">Enable the automatic refresh of feeds</string>
+    <string name="news_settings_refresh_enabled_description">Enable the automatic refresh of Recent News</string>
+    <string name="settings_refresh_interval">Refresh interval</string>
+    <string name="settings_category_content_presentation">Content presentation</string>
+    <string name="settings_keep_time">Time that the entries will be kept</string>
+    <string name="settings_display_images">Display images</string>
+    <string name="settings_display_images_description">Display images in entries</string>
+    <string name="settings_preload_image_mode">Preload images</string>
+    <string name="settings_font_size">Text size</string>
+    <string name="settings_display_oldest_first">Entries order</string>
+    <string name="settings_display_oldest_first_description">Display oldest entries first</string>
+    <string name="settings_display_entries_fullscreen">Auto-fullscreen entries</string>
+    <string name="settings_display_entries_fullscreen_description">Automatically display entries in fullscreen</string>
+    <string name="settings_refresh_on_open">Refresh feeds on open</string>
+    <string name="news_settings_refresh_on_open">Refresh News on open</string>
+    <string name="news_settings_refresh_on_open_description">Refreshes Recent News after opening the application</string>
+    <string name="settings_refresh_on_open_description">Refreshes all feeds after opening the application</string>
+    <string name="settings_refresh_wifi_only">Refresh only over Wi-Fi</string>
+    <string name="settings_refresh_wifi_only_description">Automatic refresh will only be done if Wi-Fi connection is available</string>
+
+    <string-array name="settings_intervals">
+        <item>10 minutes</item>
+        <item>1 hour</item>
+        <item>2 hours</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>1 day</item>
+    </string-array>
+    <string-array name="settings_keep_times">
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>4 days</item>
+        <item>1 week</item>
+        <item>2 weeks</item>
+        <item>1 month</item>
+        <item>2 months</item>
+        <item>3 months</item>
+        <item>Forever</item>
+    </string-array>
+    <string-array name="settings_keep_times_per_feed">
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>4 days</item>
+        <item>1 week</item>
+        <item>2 weeks</item>
+        <item>1 month</item>
+        <item>2 months</item>
+        <item>3 months</item>
+        <item>Default</item>
+    </string-array>
+    <string-array name="settings_font_sizes">
+        <item>-2</item>
+        <item>-1</item>
+        <item>Standard</item>
+        <item>+1</item>
+        <item>+2</item>
+        <item>+3</item>
+        <item>+4</item>
+        <item>+5</item>
+    </string-array>
+    <string-array name="settings_preload_image_modes">
+        <item>Never</item>
+        <item>Only over Wi-Fi</item>
+        <item>Always</item>
+    </string-array>
+    <string name="settings_widget_background">Background</string>
+    <string name="settings_widget_background_description">Color and transparency of the widget background</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="transparency">Transparency</string>
+    <string name="all_feeds">All feeds (incl. future)</string>
+    <string name="marked_as_read">Marked as read</string>
+    <string name="undo">Undo</string>
+    <string name="website_or_feed">(e.g: Hacker News, The Verge…)</string>
+
+    <string-array name="settings_interval_values" translatable="false">
+        <item>600000</item>
+        <item>3600000</item>
+        <item>7200000</item>
+        <item>21600000</item>
+        <item>43200000</item>
+        <item>86400000</item>
+    </string-array>
+    <string-array name="settings_keep_time_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>7</item>
+        <item>14</item>
+        <item>30</item>
+        <item>61</item>
+        <item>91</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="settings_font_size_values" translatable="false">
+        <item>-2</item>
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="settings_preload_image_modes_values" translatable="false">
+        <item>NEVER_DISPLAYED</item>
+        <item>WIFI_ONLY_PRELOAD</item>
+        <item>ALWAYS_PRELOAD</item>
+    </string-array>
+
+    <!--  Flashlight-->
+    <string name="no_flash">This device does not have a flash light.</string>
+
+    <!--    Layout Values-->
+    <string name="ad">Ad</string>
+    <string name="developer_name">Sagar Dhakal</string>
+    <string name="developer_career">Android Developer</string>
+    <string name="freelancer">Freelancer</string>
+    <string name="developer_address">Gulmi, Nepal</string>
+    <string name="extra_description"><![CDATA[Hello Everyone,\n My name is Sagar Dhakal and I\'m the man behind this app.\n\nTo add new sites or rss feed please email me, Go below.\n\nThanks to all for installing this app, If you have any suggestions or feedback & Sponsored ads placement feel free to message me. I will reply to everyone. :)\n\nIf you want to build any high quality app with best design and online services from Android Studio + Firebase, Do drop me a Hi, It really means a lot to me.\nLooking forward to hear from you.]]></string>
+    <string name="licenses">Licenses</string>
+    <string name="fork_on_github">Fork on Github</string>
+    <string name="nepali_radio">Nepali Radio</string>
+    <string name="filter_service">Filter Service</string>
+    <string name="brightness">Brightness</string>
+    <string name="mix_rgb_color">Mix RGB Color</string>
+    <string name="refresh">Refresh</string>
+    <string name="product">Product</string>
+    <string name="regular">is a regular expression</string>
+    <string name="radio_name">Radio name</string>
+    <string name="recently_played">Recently Played</string>
+    <string name="news_sites">News Sites</string>
+    <string name="location">Location</string>
+    <string name="province_1">Province 1</string>
+    <string name="province_2">Province 2</string>
+    <string name="province_3">Bagmati</string>
+    <string name="province_4">Gandaki</string>
+    <string name="province_5">Province 5</string>
+    <string name="province_6">Karnali</string>
+    <string name="province_7">Sudurpashchim</string>
+    <string name="category">Category</string>
+    <string name="politics">Politics</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="finance_amp_share_market"><![CDATA[Finance & Share Market]]></string>
+    <string name="health">Health</string>
+    <string name="sports">Sports</string>
+    <string name="technology">Technology</string>
+    <string name="world">World</string>
+    <string name="recent_news">Recent News</string>
+    <string name="read_full_content">Read Full Content</string>
+    <string name="share_with">Share With :</string>
+    <string name="shopping_sites">Shopping Sites</string>
+    <string name="hotel_booking_sites">Hotel Booking Sites</string>
+    <string name="job_sites">Job Sites</string>
+    <string name="education_sites">Education Sites</string>
+    <string name="other_sites">Other Sites</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="weather">Weather</string>
+    <string name="filter">Filter</string>
+    <string name="reader">Reader</string>
+    <string name="radio">Radio</string>
+    <string name="reminder_not_available">In some rare cases you need to check todo manually.</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="search">Search</string>
+    <string name="night_mode">Night Mode</string>
+
+    <!--    Menu Strings-->
+    <string name="home">Home</string>
+    <string name="online_services">Online Services</string>
+    <string name="tools">Tools</string>
+    <string name="social_media">Social Media</string>
+    <string name="todo_amp_diary"><![CDATA[Todo & Diary]]></string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="rate_us">Rate us</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="about_developer">About Developer</string>
+    <string name="send_feedback_amp_problems"><![CDATA[Send Feedback & Problems]]></string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="radio_timer">Radio Timer</string>
+    <string name="_10_min">10 Min</string>
+    <string name="_25_min">25 Min</string>
+    <string name="_40_min">40 Min</string>
+    <string name="_60_min">60 Min</string>
+    <string name="share">Share</string>
+    <string name="copy_current_link">Copy Current Link</string>
+    <string name="open_in_browser">Open in Browser</string>
+
+    <!--    Disclaimer-->
+    <string name="app_disclaimer">This app is made for those who like to read news and other article and listen online radios,
+
+        To make a good application we should give extra effort to make all services accurate and valid, application may contain inaccuracies. By using this app,
+        you agree that this app assumes no liability for any harm caused by use of this application.
+
+        We dosen\'t own and assume responsibility of any news and sites added on this app. This app uses RSS Feed to gather and display news and sites. News content, Images and their icons are copyright of their respective owner.
+        if any website/content is yours and you don\'t want to show your content here, please contact us first.
+
+        Radio is a streaming client and dosen\'t stream/host any content by itself. Images/Logo are copyright of their respective owners.
+        If you want to add/update/remove your radio station, Please inform us(cherrydigital.care@gmail.com).
+
+        To add new sites or rss feed please contact me, Go to developer page on this app. Thank you.
+    </string>
+
+</resources>

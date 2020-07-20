@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/darktTheme"
+        android:icon="@drawable/ic_darker"
+        android:orderInCategory="100"
+        android:title="@string/dark_theme"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/refresh"
+        android:icon="@drawable/ic_refresh"
+        android:orderInCategory="200"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/more_rate"
+        android:orderInCategory="300"
+        android:title="@string/rate_us"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/setting"
+        android:orderInCategory="400"
+        android:title="@string/menu_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/more_invite"
+        android:orderInCategory="500"
+        android:title="@string/invite_friends"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/more_about"
+        android:orderInCategory="600"
+        android:title="@string/about_developer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more_disclaimer"
+        android:orderInCategory="700"
+        android:title="@string/disclaimer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more_privacy"
+        android:orderInCategory="800"
+        android:title="@string/privacy_policy"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more_send"
+        android:orderInCategory="900"
+        android:title="@string/send_feedback_amp_problems"
+        app:showAsAction="never" />
+
+</menu>

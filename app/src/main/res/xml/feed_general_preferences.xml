@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <PreferenceCategory
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/settings_category_refresh">
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="refresh.enabled.reader"
+            android:summary="@string/settings_refresh_enabled_description"
+            android:title="@string/settings_refresh_enabled" />
+
+        <com.newstoday.nepalnews.rssfeedreader.view.AutoSummaryListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="7200000"
+            android:dependency="refresh.enabled.reader"
+            android:entries="@array/settings_intervals"
+            android:entryValues="@array/settings_interval_values"
+            android:inputType="number"
+            android:key="refresh.interval.reader"
+            android:title="@string/settings_refresh_interval" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="refreshonopen.enabled.reader"
+            android:summary="@string/settings_refresh_on_open_description"
+            android:title="@string/settings_refresh_on_open" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="refreshwifionly.enabled.reader"
+            android:summary="@string/settings_refresh_wifi_only_description"
+            android:title="@string/settings_refresh_wifi_only" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/settings_category_content_presentation">
+
+        <com.newstoday.nepalnews.rssfeedreader.view.AutoSummaryListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="4"
+            android:entries="@array/settings_keep_times"
+            android:entryValues="@array/settings_keep_time_values"
+            android:inputType="number"
+            android:key="keeptime.reader"
+            android:title="@string/settings_keep_time" />
+
+        <com.newstoday.nepalnews.rssfeedreader.view.AutoSummaryListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="1"
+            android:entries="@array/settings_font_sizes"
+            android:entryValues="@array/settings_font_size_values"
+            android:inputType="number"
+            android:key="fontsize.reader"
+            android:title="@string/settings_font_size" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="display_images.reader"
+            android:summary="@string/settings_display_images_description"
+            android:title="@string/settings_display_images" />
+
+        <com.newstoday.nepalnews.rssfeedreader.view.AutoSummaryListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="WIFI_ONLY_PRELOAD"
+            android:dependency="display_images.reader"
+            android:entries="@array/settings_preload_image_modes"
+            android:entryValues="@array/settings_preload_image_modes_values"
+            android:inputType="text"
+            android:key="preload_image_mode.reader"
+            android:title="@string/settings_preload_image_mode" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="display_oldest_first.reader"
+            android:summary="@string/settings_display_oldest_first_description"
+            android:title="@string/settings_display_oldest_first" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="display_entries_fullscreen.reader"
+            android:summary="@string/settings_display_entries_fullscreen_description"
+            android:title="@string/settings_display_entries_fullscreen" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

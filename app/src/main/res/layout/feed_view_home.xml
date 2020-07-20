@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:showIn="@layout/feed_activity_home">
+
+    <include layout="@layout/feed_view_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/entries_list_fragment"
+            android:name="com.newstoday.nepalnews.rssfeedreader.fragment.EntriesListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="90dp"
+            fab:menu_animationDelayPerItem="0">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/google_logo"
+                fab:fab_label="@string/google_news_title" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_new_feed_fab"
+                fab:fab_label="@string/add_custom_feed" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_ad" />
+    </FrameLayout>
+
+</LinearLayout>

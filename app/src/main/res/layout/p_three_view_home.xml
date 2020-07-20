@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/entries_list_fragment"
+            android:name="com.newstoday.nepalnews.news_package.news_location.province_three.fragment.EntriesListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="90dp"
+            fab:menu_animationDelayPerItem="0"
+            fab:menu_colorNormal="@color/colorPrimary">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_ad" />
+    </FrameLayout>
+
+</LinearLayout>

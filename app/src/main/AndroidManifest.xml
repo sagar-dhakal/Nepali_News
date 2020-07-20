@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.newstoday.nepalnews">
+
+    <!--    Notification-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--    Filter-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
+
+
+    <!--    Internet-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!--    Database-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--    Weather-->
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--    Radio-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission
+        android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--    Flashlight-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.newstoday.nepalnews.WRITE_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <!--    Broadcast Receiver-->
+    <permission android:name="com.newstoday.nepalnews.todo_diary.NOTIFICATION" />
+    <!--    Services-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+
+        <receiver
+            android:name=".todo_diary.AlarmReceiver"
+            android:enabled="true"
+            android:permission="com.newstoday.nepalnews.todo_diary.NOTIFICATION">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.newstoday.nepalnews.todo_diary.NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".news_package.recent_news.service.Lollipop_RefreshService"
+            android:label="News Sync"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".rssfeedreader.service.Lollipop_RefreshService"
+            android:label="Feed Sync"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".activities.walkthrough.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.Splash_Activity" />
+
+        <service
+            android:name=".services.MyFirebaseMessagingService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.MyFirebaseMessagingService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id" />
+
+        <activity android:name=".activities.About_Developer" />
+        <activity android:name=".services.Navigation" />
+
+        <service
+            android:name=".services.FilterService"
+            android:enabled="true"
+            android:stopWithTask="true" />
+
+        <!--        Screen Filter-->
+        <activity
+            android:name="com.newstoday.nepalnews.screenfilter.ui.MainActivity"
+            android:excludeFromRecents="false"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleInstance"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/filter_shortcuts" />
+        </activity>
+
+        <activity
+            android:name="com.newstoday.nepalnews.screenfilter.ui.shortcut.ToggleActivity"
+            android:theme="@style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.newstoday.nepalnews.screenfilter.service.MaskService"
+            android:permission="com.newstoday.nepalnews.screenfilter.permission.CONTROL_NIGHT_SCREEN"
+            android:process=":mask">
+            <intent-filter>
+                <action android:name="com.newstoday.nepalnews.screenfilter.IMaskServiceInterface" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.newstoday.nepalnews.screenfilter.service.MaskTileService"
+            android:icon="@drawable/filter_brightness_2_black_48dp"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.newstoday.nepalnews.screenfilter.receiver.ActionReceiver"
+            android:exported="true"
+            android:permission="com.newstoday.nepalnews.screenfilter.CONTROL_NIGHT_SCREEN">
+            <intent-filter>
+                <action android:name="com.newstoday.nepalnews.screenfilter.ACTION_UPDATE_STATUS" />
+                <action android:name="com.newstoday.nepalnews.screenfilter.ALARM_ACTION_START" />
+                <action android:name="com.newstoday.nepalnews.screenfilter.ALARM_ACTION_STOP" />
+            </intent-filter>
+        </receiver>
+
+
+        <!-- radio -->
+        <activity android:name=".radio.Radio_Activity" />
+
+        <service android:name=".radio.radioplayer_service.RadioService" />
+
+        <activity android:name=".radio.radio_favorites.Fav_Detail_Activity" />
+        <activity android:name=".radio.Radio_Detail_Activity" />
+        <activity android:name=".radio.radio_recent.Recent_Detail_Activity" />
+
+        <receiver android:name="androidx.media.session.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Flashlight -->
+        <activity android:name=".flashlight.MainActivity" />
+
+        <!--        Weather-->
+        <activity android:name=".activities.Activity_Weather" />
+
+        <!-- Filter -->
+        <activity android:name=".darker.ScreenFilter_Activity" />
+
+        <service
+            android:name=".darker.FilterService"
+            android:enabled="true" />
+        <!-- To-do & Diary -->
+        <activity
+            android:name=".todo_diary.AddToDoActivity"
+            android:parentActivityName=".todo_diary.MainActivity"
+            android:theme="@style/Theme.Light" />
+        <activity android:name=".todo_diary.ReminderActivity" />
+
+        <service android:name=".todo_diary.DeleteNotificationService" />
+
+        <!-- News -->
+        <service android:name=".news_package.recent_news.service.RefreshService" />
+        <service android:name=".news_package.recent_news.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.recent_news.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.recent_news.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.recent_news.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.recent_news.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.recent_news.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.recent" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".news_package.recent_news.activity.GeneralPrefsActivity" />
+
+        <receiver android:name=".services.receiver.BootCompletedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".services.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".news_package.recent_news.service.RefreshService$RefreshAlarmReceiver" />
+        <!-- Province One News -->
+        <service android:name=".news_package.news_location.province_one.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_one.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_one.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_one.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_one.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_one.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.pone" />
+            </intent-filter>
+        </activity> <!-- Province Two News -->
+        <service android:name=".news_package.news_location.province_two.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_two.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_two.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_two.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_two.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_two.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.ptwo" />
+            </intent-filter>
+        </activity> <!-- Province Three News -->
+        <service android:name=".news_package.news_location.province_three.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_three.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_three.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_three.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_three.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_three.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.pthree" />
+            </intent-filter>
+        </activity> <!-- Province Four News -->
+        <service android:name=".news_package.news_location.province_four.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_four.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_four.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_four.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_four.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_four.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.pfour" />
+            </intent-filter>
+        </activity> <!-- Province Five News -->
+        <service android:name=".news_package.news_location.province_five.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_five.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_five.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_five.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_five.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_five.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.pfive" />
+            </intent-filter>
+        </activity> <!-- Province Six News -->
+        <service android:name=".news_package.news_location.province_six.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_six.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_six.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_six.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_six.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_six.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.psix" />
+            </intent-filter>
+        </activity> <!-- Province Seven News -->
+        <service android:name=".news_package.news_location.province_seven.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_location.province_seven.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_location.province_seven.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.province_seven.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_location.province_seven.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_location.province_seven.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.pseven" />
+            </intent-filter>
+        </activity> <!-- Entertainment -->
+        <service android:name=".news_package.news_category.entertainment.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.entertainment.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.enter.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.entertainment.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.entertainment.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.entertainment.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.enter" />
+            </intent-filter>
+        </activity> <!-- Finance -->
+        <service android:name=".news_package.news_category.finance.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.finance.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.finance.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.finance.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.finance.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.finance.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.finance" />
+            </intent-filter>
+        </activity> <!-- Health -->
+        <service android:name=".news_package.news_category.health.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.health.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.health.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.health.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.health.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.health.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.health" />
+            </intent-filter>
+        </activity> <!-- Politics -->
+        <service android:name=".news_package.news_category.politics.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.politics.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.politics.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.politics.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.politics.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.politics.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.politics" />
+            </intent-filter>
+        </activity> <!-- Sports -->
+        <service android:name=".news_package.news_category.sports.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.sports.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.sports.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.sports.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.sports.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.sports.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.sports" />
+            </intent-filter>
+        </activity> <!-- Technology -->
+        <service android:name=".news_package.news_category.technology.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.technology.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.technology.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.technology.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.technology.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.technology.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.tech" />
+            </intent-filter>
+        </activity> <!-- World -->
+        <service android:name=".news_package.news_category.world.service.FetcherService" />
+
+        <provider
+            android:name=".news_package.news_category.world.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.news_package.news_category.world.provider.FeedData"
+            android:exported="false"
+            android:writePermission="com.newstoday.nepalnews.news_package.news_category.world.provider.WRITE_PERMISSION" />
+
+        <activity android:name=".news_package.news_category.world.activity.HomeActivity" />
+        <activity
+            android:name=".news_package.news_category.world.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spaRSS.entry.world" />
+            </intent-filter>
+        </activity> <!-- Feed Reader -->
+        <service android:name=".rssfeedreader.service.RefreshService" />
+        <service android:name=".rssfeedreader.service.FetcherService" />
+
+        <provider
+            android:name=".rssfeedreader.provider.FeedDataContentProvider"
+            android:authorities="com.newstoday.nepalnews.rssfeedreader.provider.FeedData"
+            android:exported="true"
+            android:writePermission="com.newstoday.nepalnews.rssfeedreader.provider.WRITE_PERMISSION" />
+
+        <activity
+            android:name=".rssfeedreader.activity.HomeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Light" />
+        <activity
+            android:name=".rssfeedreader.activity.AddGoogleNewsActivity"
+            android:label="@string/google_news_title"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Light"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".rssfeedreader.activity.EditFeedsListActivity"
+            android:label="@string/feeds"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Light" />
+        <activity
+            android:name=".rssfeedreader.activity.EntryActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Slidr.Light">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action
+                    android:name="android.intent.action.VIEW"
+                    tools:ignore="AppLinkUrlError" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spa.entry" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rssfeedreader.activity.GeneralPrefsActivity"
+            android:label="@string/menu_settings"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Light" />
+        <activity
+            android:name=".rssfeedreader.widget.WidgetConfigActivity"
+            android:theme="@style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rssfeedreader.activity.EditFeedActivity"
+            android:theme="@style/Theme.Light"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.spa.feed" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/vnd.spa.feed" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.xml" />
+                <data android:pathPattern=".*\\.rss" />
+                <data android:pathPattern=".*/feed" />
+                <data android:pathPattern=".*feed/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="feeds.feedburner.com" />
+                <data android:host="feedproxy.google.com" />
+                <data android:host="feeds2.feedburner.com" />
+                <data android:host="feedsproxy.google.com" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:mimeType="text/xml" />
+                <data android:mimeType="application/rss+xml" />
+                <data android:mimeType="application/rdf+xml" />
+                <data android:mimeType="application/atom+xml" />
+                <data android:mimeType="application/xml" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="feed" />
+                <data android:scheme="rss" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".rssfeedreader.widget.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widgetinfo" />
+        </receiver>
+        <receiver android:name=".rssfeedreader.widget.TickerWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/tickerwidgetinfo" />
+        </receiver>
+
+        <service
+            android:name=".rssfeedreader.widget.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service android:name=".rssfeedreader.widget.TickerWidgetService" />
+
+        <receiver android:name=".rssfeedreader.service.RefreshService$RefreshAlarmReceiver" />
+    </application>
+
+</manifest>

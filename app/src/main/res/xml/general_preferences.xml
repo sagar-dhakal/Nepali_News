@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <SwitchPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="true"
+        android:key="refresh.enabled"
+        android:summary="@string/news_settings_refresh_enabled_description"
+        android:title="@string/settings_refresh_enabled" />
+
+    <com.newstoday.nepalnews.news_package.recent_news.view.AutoSummaryListPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="7200000"
+        android:dependency="refresh.enabled"
+        android:entries="@array/settings_intervals"
+        android:entryValues="@array/settings_interval_values"
+        android:inputType="number"
+        android:key="refresh.interval"
+        android:title="@string/settings_refresh_interval" />
+
+    <SwitchPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="false"
+        android:key="refreshonopen.enabled"
+        android:summary="@string/news_settings_refresh_on_open_description"
+        android:title="@string/news_settings_refresh_on_open" />
+</PreferenceScreen>

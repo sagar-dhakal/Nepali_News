@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "353608910215",
+    "firebase_url": "https://news-today-current-news.firebaseio.com",
+    "project_id": "news-today-current-news",
+    "storage_bucket": "news-today-current-news.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353608910215:android:4599a74b5ffbab6f503f22",
+        "android_client_info": {
+          "package_name": "com.newstoday.nepalnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353608910215-skkhveo8qab6facka6eadjd3rqlnnol8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newstoday.nepalnews",
+            "certificate_hash": "137886adbc62a8a5bd40da3bad5f6d060e7bdc06"
+          }
+        },
+        {
+          "client_id": "353608910215-g1fhgjv3e8svtsa9q15q0sqibkffluic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhXPsf5i3-x-HK1_rBz_Td9Yc9N-qNJXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353608910215-g1fhgjv3e8svtsa9q15q0sqibkffluic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

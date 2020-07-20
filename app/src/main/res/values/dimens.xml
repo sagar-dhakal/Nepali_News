@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_size">16sp</dimen>
+    <dimen name="channel_size">10sp</dimen>
+    <dimen name="pubdate_size">12sp</dimen>
+
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="horizontal_margin2">8dp</dimen>
+
+    <dimen name="img_size">40dp</dimen>
+
+    <!--    Screen Filter-->
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+    <dimen name="toolbar_height">48dp</dimen>
+
+    <dimen name="exitXAnimationStart">-15dp</dimen>
+    <dimen name="exitYAnimatorFinish">34dp</dimen>
+    <dimen name="enterYAnimationStart">-30dp</dimen>
+    <dimen name="enterAnimationStartValue">-25dp</dimen>
+    <dimen name="exitAnimationExitValue">25dp</dimen>
+    <dimen name="icon_size">11dp</dimen>
+    <dimen name="margin">14dp</dimen>
+    <dimen name="ball_radius">11dp</dimen>
+    <dimen name="ball_start_position">12dp</dimen>
+</resources>
